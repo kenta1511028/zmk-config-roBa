@@ -84,7 +84,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAPDANCE_Q";
             #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp LANG_ZENKAKUHANKAKU>;
+            bindings = <&kp Q>, <&kp GRAVE>;
 
             tapping-term-ms = <300>;
         };
