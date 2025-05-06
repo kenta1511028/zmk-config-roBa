@@ -64,17 +64,17 @@
         mt_z: mt_z {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_Z";
-            bindings = <&mt>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <500>;
             flavor = "balanced";
         };
 
         lt_1: lt_1 {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_1";
-            bindings = <&lt>, <&kp>;
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <300>;
