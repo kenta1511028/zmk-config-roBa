@@ -108,6 +108,42 @@
 
             tapping-term-ms = <300>;
         };
+
+        TapDance_k: TapDance_k {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCE_K";
+            #binding-cells = <0>;
+            bindings = <&kp K>, <&kp UP_ARROW>;
+
+            tapping-term-ms = <300>;
+        };
+
+        TapDance_m: TapDance_m {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCE_M";
+            #binding-cells = <0>;
+            bindings = <&kp M>, <&kp LEFT>;
+
+            tapping-term-ms = <300>;
+        };
+
+        TapDance_comma: TapDance_comma {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCE_COMMA";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp DOWN_ARROW>;
+
+            tapping-term-ms = <300>;
+        };
+
+        TapDance_dot: TapDance_dot {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCE_DOT";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp RIGHT_ARROW>;
+
+            tapping-term-ms = <300>;
+        };
     };
 
     keymap {
@@ -115,10 +151,10 @@
 
         default_layer {
             bindings = <
-&TapDance_q     &kp W         &kp E         &kp R              &kp T                              &kp Y      &kp U  &kp I      &kp O    &TapDance_p
-&kp TAB         &kp A         &kp S         &kp D              &kp F        &kp G      &kp MINUS  &kp H      &kp J  &kp K      &kp L    &kp SEMICOLON
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C              &kp V        &kp B      &trans     &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt_1 1 BACKSPACE  &lt 2 SPACE  &mo 3      &trans     &kp ENTER                             &mo 6
+&TapDance_q     &kp W         &kp E         &kp R              &kp T                              &kp Y      &kp U        &kp I            &kp O          &TapDance_p
+&kp TAB         &kp A         &kp S         &kp D              &kp F        &kp G      &kp MINUS  &kp H      &kp J        &TapDance_k      &kp L          &kp SEMICOLON
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C              &kp V        &kp B      &trans     &kp N      &TapDance_m  &TapDance_comma  &TapDance_dot  &kp SLASH
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt_1 1 BACKSPACE  &lt 2 SPACE  &mo 3      &trans     &kp ENTER                                               &mo 6
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
