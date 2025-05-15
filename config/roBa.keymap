@@ -17,29 +17,14 @@
     combos {
         compatible = "zmk,combos";
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
+        nobasibou {
+            bindings = <&kp MINUS>;
+            key-positions = <8 9>;
         };
 
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
-        };
-
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
         };
     };
 
@@ -87,7 +72,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAPDANCE_Q";
             #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp GRAVE>;
+            bindings = <&kp LA(GRAVE)>, <&kp Q>;
 
             tapping-term-ms = <300>;
         };
@@ -152,10 +137,10 @@
 
         default_layer {
             bindings = <
-&TapDance_q     &kp W         &kp E         &kp R              &kp T                              &kp Y      &kp U        &kp I            &kp O          &TapDance_p
-&kp TAB         &kp A         &kp S         &kp D              &kp F        &kp G      &kp MINUS  &kp H      &kp J        &TapDance_k      &kp L          &kp SEMICOLON
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C              &kp V        &kp B      &trans     &kp N      &TapDance_m  &TapDance_comma  &TapDance_dot  &kp SLASH
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt_1 1 BACKSPACE  &lt 2 SPACE  &mo 3      &trans     &kp ENTER                                               &mo 6
+&TapDance_q     &kp W         &kp E         &kp R              &kp T                                              &kp Y      &kp U  &kp I      &kp O    &kp P
+&kp TAB         &kp A         &kp S         &kp D              &kp F        &kp G                 &kp MINUS       &kp H      &kp J  &kp K      &kp L    &kp SEMICOLON
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C              &kp V        &kp B                 &trans          &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt_1 1 BACKSPACE  &lt 2 SPACE  &lt 3 LANGUAGE_2      &kp LANGUAGE_1  &kp ENTER                             &mo 6
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -181,10 +166,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &trans  &trans  &trans  &trans
-&kp TAB         &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &trans  &kp AT  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                          &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp LS(TAB)              &trans  &trans                      &trans  &trans  &trans          &trans          &trans
+&kp TAB         &kp LG(LS(LEFT_ARROW))  &kp LG(LS(RIGHT_ARROW))  &trans  &trans  &trans      &trans  &trans  &trans  &trans          &kp UP_ARROW    &trans
+&kp LEFT_SHIFT  &kp LG(LEFT_ARROW)      &kp LG(RIGHT_ARROW)      &trans  &trans  &trans      &trans  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&kp LCTRL       &trans                  &trans                   &trans  &trans  &trans      &trans  &trans                                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -192,10 +177,10 @@
 
         MOUSE {
             bindings = <
-&trans     &trans  &trans  &trans         &trans                        &trans  &trans    &trans    &trans    &trans
-&trans     &trans  &trans  &mkp MB2       &mkp MB1  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans     &trans  &trans  &mkp MB4       &mkp MB5  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&kp LCTRL  &trans  &trans  &kp BACKSPACE  &mo 5     &trans      &trans  &trans                                &trans
+&trans     &kp LC(LS(TAB))         &kp LC(TAB)              &trans         &trans                        &trans  &trans    &trans    &trans    &trans
+&trans     &kp LG(LS(LEFT_ARROW))  &kp LG(LS(RIGHT_ARROW))  &mkp MB4       &mkp MB5  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
+&trans     &kp LG(LEFT_ARROW)      &kp LG(RIGHT_ARROW)      &trans         &trans    &trans      &trans  &trans  &trans    &trans    &trans    &trans
+&kp LCTRL  &trans                  &trans                   &kp BACKSPACE  &mo 5     &trans      &trans  &trans                                &trans
             >;
         };
 
